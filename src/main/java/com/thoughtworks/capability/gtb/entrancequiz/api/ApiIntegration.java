@@ -23,7 +23,6 @@ public class ApiIntegration {
 
     @GetMapping("/teams")
     public ResponseEntity<List<Team>> getTeams(){
-
         return ResponseEntity.status(HttpStatus.OK).body(teamService.getTeams());
     }
 
@@ -32,9 +31,10 @@ public class ApiIntegration {
         return studentService.getStudents();
     }
 
-    @PostMapping("/students")
-    public List<Student> grouping(){
-        return studentService.getStudents();
+    @PostMapping("/grouping")
+    public List<Team> grouping(){
+        teamService.grouping();
+        return teamService.getTeams();
     }
 
     @PostMapping("/student")

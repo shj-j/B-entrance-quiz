@@ -1,10 +1,12 @@
 package com.thoughtworks.capability.gtb.entrancequiz.repository;
 
+import com.thoughtworks.capability.gtb.entrancequiz.domain.Student;
 import com.thoughtworks.capability.gtb.entrancequiz.domain.Team;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class TeamRepository {
@@ -21,5 +23,12 @@ public class TeamRepository {
 
     public List<Team> getTeamList() {
         return teamList;
+    }
+
+    public void save(Map<Integer, List<Student>> teamMap) {
+//        teamList.forEach(team -> team.setStudentsList(teamMap.get(team.g)));
+        for(int i = 0 ; i < 6 ; i++ ){
+            teamList.get(i).setStudentsList(teamMap.get(i+1));
+        }
     }
 }

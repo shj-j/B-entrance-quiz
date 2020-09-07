@@ -16,6 +16,8 @@ public class StudentRepository {
         studentList.add(Student.builder().id(3).name("陈思聪").build());
         studentList.add(Student.builder().id(4).name("王江林").build());
         studentList.add(Student.builder().id(5).name("王登宇").build());
+        studentList.add(Student.builder().id(5).name("杨思雨").build());
+        studentList.add(Student.builder().id(5).name("江雨舟").build());
     }
     public List<Student> getStudentList(){
         return studentList;
