@@ -6,9 +6,7 @@ import com.thoughtworks.capability.gtb.entrancequiz.service.StudentService;
 import com.thoughtworks.capability.gtb.entrancequiz.service.TeamService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,4 +31,15 @@ public class ApiIntegration {
     public List<Student> getStudents(){
         return studentService.getStudents();
     }
+
+    @PostMapping("/students")
+    public List<Student> grouping(){
+        return studentService.getStudents();
+    }
+
+    @PostMapping("/student")
+    public void addStudent(@RequestBody Student student){
+        studentService.saveStudent(student);
+    }
+
 }

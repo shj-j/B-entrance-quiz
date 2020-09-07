@@ -40,10 +40,10 @@ public class ApiIntegrationTest {
                 .andExpect(status().isOk());
     }
 
-//    @Test
-//    public void shouldReturnAllTeams() throws Exception {
-//        mockMvc.perform(get("/teams"))
-//                .andExpect(jsonPath("$.length()", is(6)))
-//                .andExpect(status().isOk());
-//    }
+    @Test
+    public void shouldReturnAllTeams() throws Exception {
+        mockMvc.perform(get("/teams"))
+                .andExpect(jsonPath("$.length()", is(6)))
+                .andExpect(status().isOk());
+    }
 }
